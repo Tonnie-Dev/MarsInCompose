@@ -3,6 +3,7 @@ package com.uxstate.marsincompose.di
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import com.uxstate.marsincompose.data.remote.MarsEstateAPI
+import com.uxstate.marsincompose.data.repository.EstateRepositoryImpl
 import com.uxstate.marsincompose.domain.repo.EstateRepository
 import com.uxstate.marsincompose.utils.Constants
 import dagger.Module
@@ -44,12 +45,12 @@ add the KotlinJsonAdapterFactory*/
     }
 
 
-//2. REPO Dependency to be injected
+//2. REPO Dependency to be injected - it returns the real repo (an implementation of the interface)
 
     @Provides
     @Singleton
-    fun providesEstateRepository():EstateRepository{
+    fun providesEstateRepository(api:MarsEstateAPI):EstateRepository{
 
-        return EstateRepository()
+        return EstateRepositoryImpl(api =api )
     }
 }

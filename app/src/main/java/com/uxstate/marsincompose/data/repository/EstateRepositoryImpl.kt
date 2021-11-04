@@ -6,9 +6,9 @@ import com.uxstate.marsincompose.domain.repo.EstateRepository
 import javax.inject.Inject
 
 
-//this is the real implementation
+//This is the real implementation
 
-//It injects the API dependency into the repo's constructor
+//It injects the Mars API dependency into the repo's constructor
 
 //It implements the domain's repo which has the use-cases
 
