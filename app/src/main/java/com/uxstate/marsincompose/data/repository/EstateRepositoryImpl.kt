@@ -16,7 +16,7 @@ class EstateRepositoryImpl @Inject constructor(private val api:MarsEstateAPI):Es
 
 
     //this suspend method just returns api's getEstates()
-    override suspend fun getEstate(): List<EstateDTO> {
+    override suspend fun getEstates(): List<EstateDTO> {
       return api.getEstates()
     }
 

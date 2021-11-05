@@ -5,5 +5,5 @@ import com.uxstate.marsincompose.data.remote.dto.EstateDTO
 interface EstateRepository {
 
 
-    suspend fun getEstate():List<EstateDTO>
+    suspend fun getEstates():List<EstateDTO>
 }
