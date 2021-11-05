@@ -10,6 +10,16 @@ import retrofit2.HttpException
 import java.io.IOException
 import javax.inject.Inject
 
+/*This use-case will use the EstateRepository to access out API and
+  basically forward that info to the ViewModel*/
+
+/*We Inject the EstateRepository interface instead of the implementation
+ which is easily be replaced*/
+
+/*This use case doesn't really care which repo it gets as long as it
+provides interface with 2 methods getCoin and getCoins*/
+
+
 
 class GetEstatesUseCase @Inject constructor(private val repository: EstateRepository){
 
