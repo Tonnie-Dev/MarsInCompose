@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyVerticalGrid
+import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
@@ -13,6 +14,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.uxstate.marsincompose.presentation.EstateViewModel
+import com.uxstate.marsincompose.presentation.estatelist.components.MarsEstateItem
 
 @ExperimentalFoundationApi
 @Composable
@@ -27,7 +29,17 @@ fun EstateListScreen(
 
     Box(modifier = Modifier.fillMaxSize()){
 
-        LazyVerticalGrid(cells = GridCells.Fixed(2), contentPadding = PaddingValues(5.dp)){}
+        LazyVerticalGrid(cells = GridCells.Fixed(2), contentPadding = PaddingValues(5.dp)){
+
+
+       items(state.estates){
+
+           estate ->
+
+           MarsEstateItem(estate = estate, isLoading = state.isLoading , onItemClick = {})
+
+       }
+        }
     }
 
 }
