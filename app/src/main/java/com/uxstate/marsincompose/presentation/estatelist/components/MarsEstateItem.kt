@@ -1,10 +1,8 @@
 package com.uxstate.marsincompose.presentation.estatelist.components
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.sizeIn
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -15,16 +13,14 @@ import com.uxstate.marsincompose.domain.model.Estate
 
 @Composable
 fun MarsEstateItem(
-    estate: Estate,
-    isLoading: Boolean,
-    onItemClick: (Estate) -> Unit
+    estate: Estate, onItemClick: (Estate) -> Unit
 ) {
     val imgUri = estate.imgSrc.toUri()
         .buildUpon()
         .scheme("https")
         .build()
 
-    Box(modifier = Modifier.size(128.dp)) {
+    Box(modifier = Modifier.clickable { onItemClick(estate) }) {
 
         Image(
             painter = rememberImagePainter(
@@ -32,7 +28,7 @@ fun MarsEstateItem(
                 builder = { crossfade(true) }
             ),
             contentDescription = null,
-            modifier = Modifier.size(50.dp, 50.dp)
+            modifier = Modifier.size(50.dp, 50.dp).padding(4.dp)
         )
 
 
@@ -51,6 +47,6 @@ fun MarsEstateItemPreview() {
         type = "rent"
     )
     MarsEstateItem(
-        estate = estate, isLoading = false, onItemClick = {}
+        estate = estate, onItemClick = {}
     )
 }
