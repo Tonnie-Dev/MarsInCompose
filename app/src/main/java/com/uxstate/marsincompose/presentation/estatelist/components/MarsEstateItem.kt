@@ -61,10 +61,12 @@ fun MarsEstateItem(
 @Preview(name = "MarsEstateItem")
 @Composable
 fun MarsEstateItemPreview() {
+//https://android-kotlin-fun-mars-server.appspot.com/realestate
 
+val url =  "http://mars.jpl.nasa.gov/msl-raw-images/msss/01000/mcam/1000MR0044631300503690E01_DXXX.jpg"
     val estate = Estate(
         id = "424913",
-        imgSrc = "https://picsum.photos/300/300",
+        imgSrc = url,
         price = 13,
         type = "rent"
     )
