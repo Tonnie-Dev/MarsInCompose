@@ -34,14 +34,17 @@ add the KotlinJsonAdapterFactory*/
 
     private val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
 
-//1. API Dependency to be injected
+    //1. API Dependency to be injected
     @Provides
     @Singleton
 
-    fun providesAPIDependency():MarsEstateAPI{
+    fun providesAPIDependency(): MarsEstateAPI {
 
-        return Retrofit.Builder().baseUrl(Constants.BASE_URL).addConverterFactory(MoshiConverterFactory.create(
-            moshi)).build().create(MarsEstateAPI::class.java)
+        return Retrofit.Builder().baseUrl(Constants.BASE_URL)
+            .addConverterFactory(
+                MoshiConverterFactory.create(moshi)
+            ).build()
+            .create(MarsEstateAPI::class.java)
     }
 
 
@@ -49,8 +52,8 @@ add the KotlinJsonAdapterFactory*/
 
     @Provides
     @Singleton
-    fun providesEstateRepository(api:MarsEstateAPI):EstateRepository{
+    fun providesEstateRepository(api: MarsEstateAPI): EstateRepository {
 
-        return EstateRepositoryImpl(api =api )
+        return EstateRepositoryImpl(api = api)
     }
 }
