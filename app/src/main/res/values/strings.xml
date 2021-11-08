@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MarsInCompose</string>
+
+    <string name="type_rent">For Rent</string>
+    <string name="type_sale">For Sale</string>
+    <string name="display_price_monthly_rental">USD %,.0f/year</string>
+    <string name="display_price">USD %,.0f</string>
 </resources>
