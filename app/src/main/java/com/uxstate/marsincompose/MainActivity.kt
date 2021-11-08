@@ -12,6 +12,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
 import com.uxstate.marsincompose.presentation.estatelist.EstateListScreen
 import com.uxstate.marsincompose.ui.theme.MarsInComposeTheme
+import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
+
+@AndroidEntryPoint
 @ExperimentalFoundationApi
 class MainActivity : ComponentActivity() {
 
@@ -19,6 +23,8 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+
+            Timber.i("Inside MainActivity")
             MarsInComposeTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
