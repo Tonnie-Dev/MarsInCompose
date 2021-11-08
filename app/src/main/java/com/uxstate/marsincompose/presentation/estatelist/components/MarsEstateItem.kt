@@ -31,7 +31,7 @@ fun MarsEstateItem(
             painter = rememberImagePainter(
                 data = imgUri ,
                 builder = { crossfade(true)
-                    placeholder(R.drawable.loading_img)
+                    placeholder(R.drawable.loading_animation)
 
 
                 }
