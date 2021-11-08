@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -30,13 +31,16 @@ fun MarsEstateItem(
             painter = rememberImagePainter(
                 data = imgUri ,
                 builder = { crossfade(true)
-                    placeholder(R.drawable.loading_img) }
+                    placeholder(R.drawable.loading_img)
 
+
+                }
             ),
             contentDescription = null,
+            contentScale = ContentScale.Crop,
             modifier = Modifier
-                .size(50.dp, 50.dp)
-                .padding(4.dp)
+                .size(200.dp, 200.dp).padding(3.dp)
+
         )
 
         if (estate.type=="rent"){
@@ -45,8 +49,8 @@ fun MarsEstateItem(
                 painter = painterResource(id = R.drawable.ic_for_sale_outline),
                 contentDescription = null,
                 modifier = Modifier
-                    .padding(2.dp)
-                    .size(10.dp)
+                    .padding(4.dp)
+                    .size(30.dp)
 
                     .align(Alignment.BottomStart)
             )

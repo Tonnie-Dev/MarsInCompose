@@ -29,7 +29,7 @@ fun EstateListScreen(
 
     Box(modifier = Modifier.fillMaxSize()){
 
-        LazyVerticalGrid(cells = GridCells.Fixed(2), contentPadding = PaddingValues(5.dp)){
+        LazyVerticalGrid(cells = GridCells.Fixed(2), contentPadding = PaddingValues(2.dp)){
 
 
        items(state.estates){
