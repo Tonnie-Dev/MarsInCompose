@@ -59,7 +59,7 @@ fun TypeHeaderText(estate: Estate) {
 }
 
 @Composable
-fun PriceText(estate: Estate){
+fun PriceHeaderText(estate: Estate){
     
     if (estate.type=="rent"){
 
