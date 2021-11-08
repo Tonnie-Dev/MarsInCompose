@@ -21,8 +21,8 @@ fun EstateDTO.toEstate():Estate{
 
     return Estate(
         id = id,
-        imgSrc = "",
-        price = 0,
-        type = ""
+        imgSrc = imgSrc,
+        price = price,
+        type = type
     )
 }
