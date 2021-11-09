@@ -19,7 +19,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.uxstate.marsincompose.R
-import com.uxstate.marsincompose.presentation.EstateViewModel
+import com.uxstate.marsincompose.presentation.estatelist.components.EstateViewModel
 import com.uxstate.marsincompose.presentation.estatelist.components.MarsEstateItem
 
 @ExperimentalFoundationApi
