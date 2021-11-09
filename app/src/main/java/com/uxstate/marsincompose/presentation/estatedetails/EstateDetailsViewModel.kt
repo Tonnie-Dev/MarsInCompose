@@ -1,6 +1,5 @@
 package com.uxstate.marsincompose.presentation.estatedetails
 
-import android.view.View
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
@@ -15,7 +14,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class EstateDetailsViewModel @Inject constructor(
-    private val usecase: GetMarsEstateUseCase,
+    private val useCase: GetMarsEstateUseCase,
     savedStateHandle: SavedStateHandle
 ) :
     ViewModel() {
@@ -38,7 +37,7 @@ class EstateDetailsViewModel @Inject constructor(
 
     private fun getEstate(id: String) {
 
-        usecase(id).onEach {
+        useCase(id).onEach {
 
             result ->
 

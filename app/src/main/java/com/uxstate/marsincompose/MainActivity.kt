@@ -13,6 +13,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.uxstate.marsincompose.presentation.Screens
+import com.uxstate.marsincompose.presentation.estatedetails.EstateDetailsScreen
 import com.uxstate.marsincompose.presentation.estatelist.EstateListScreen
 import com.uxstate.marsincompose.ui.theme.MarsInComposeTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -43,6 +44,12 @@ class MainActivity : ComponentActivity() {
                         composable(route = Screens.OVERVIEWSCREEN.route){
                             EstateListScreen(navController = navController)
 
+                        }
+                        
+                        composable(route = "${Screens.DETAILSSCREEN.route}/{estateId}"){
+                            
+                            
+                            EstateDetailsScreen()
                         }
                     }
 
