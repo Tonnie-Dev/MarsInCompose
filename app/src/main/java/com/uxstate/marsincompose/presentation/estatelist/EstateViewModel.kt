@@ -1,4 +1,4 @@
-package com.uxstate.marsincompose.presentation.estatelist.components
+package com.uxstate.marsincompose.presentation.estatelist
 
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
