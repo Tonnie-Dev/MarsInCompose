@@ -2,6 +2,7 @@ package com.uxstate.marsincompose.data.repository
 
 import com.uxstate.marsincompose.data.remote.MarsEstateAPI
 import com.uxstate.marsincompose.data.remote.dto.EstateDTO
+import com.uxstate.marsincompose.domain.model.Estate
 import com.uxstate.marsincompose.domain.repo.EstateRepository
 import javax.inject.Inject
 
@@ -18,6 +19,13 @@ class EstateRepositoryImpl @Inject constructor(private val api:MarsEstateAPI):Es
     //this suspend method just returns api's getEstates()
     override suspend fun getEstates(): List<EstateDTO> {
       return api.getEstates()
+    }
+
+    override suspend fun getEstateById(id: String): EstateDTO {
+
+
+        val estate = api.getEstates().single{ estateDTO -> estateDTO.id ==id }
+        return estate
     }
 
 
