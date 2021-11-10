@@ -46,8 +46,8 @@ class MainActivity : ComponentActivity() {
 
                         }
                         
-                        composable(route = "${Screens.DETAILSSCREEN.route}/{estateId}"){
-                            
+                        composable(route = "${Screens.DETAILSSCREEN.route}/{estateId13}"){
+
                             
                             EstateDetailsScreen()
                         }

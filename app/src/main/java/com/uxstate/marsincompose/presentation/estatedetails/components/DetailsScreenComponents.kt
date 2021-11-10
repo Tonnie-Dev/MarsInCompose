@@ -1,6 +1,8 @@
 package com.uxstate.marsincompose.presentation.estatedetails.components
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.Text
@@ -29,15 +31,13 @@ fun DetailImage(estate: Estate) {
             builder = {
                 crossfade(true)
                 placeholder(R.drawable.loading_animation)
-
-
             }
         ),
         contentDescription = null,
         contentScale = ContentScale.Crop,
         modifier = Modifier
-            .size(200.dp, 200.dp)
-            .padding(3.dp)
+            .fillMaxWidth().height(300.dp)
+            .padding(5.dp)
 
     )
 
@@ -63,10 +63,10 @@ fun PriceHeaderText(estate: Estate){
     
     if (estate.type=="rent"){
 
-        Text(text = stringResource(id = R.string.display_price_monthly_rental, estate.price))
+        Text(text = stringResource(id = R.string.display_price_monthly_rental, estate.price.toDouble()))
 
     }else{
-        Text(text = stringResource(id = R.string.display_price, estate.price))
+        Text(text = stringResource(id = R.string.display_price, estate.price.toDouble()))
 
     }
 

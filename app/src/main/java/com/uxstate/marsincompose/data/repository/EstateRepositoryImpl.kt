@@ -2,8 +2,8 @@ package com.uxstate.marsincompose.data.repository
 
 import com.uxstate.marsincompose.data.remote.MarsEstateAPI
 import com.uxstate.marsincompose.data.remote.dto.EstateDTO
-import com.uxstate.marsincompose.domain.model.Estate
 import com.uxstate.marsincompose.domain.repo.EstateRepository
+import timber.log.Timber
 import javax.inject.Inject
 
 
@@ -21,11 +21,10 @@ class EstateRepositoryImpl @Inject constructor(private val api:MarsEstateAPI):Es
       return api.getEstates()
     }
 
-    override suspend fun getEstateById(id: String): EstateDTO {
+    override suspend fun getEstateById(estateId: String): EstateDTO {
 
-
-        val estate = api.getEstates().single{ estateDTO -> estateDTO.id ==id }
-        return estate
+Timber.i("The passedId is $estateId")
+        return api.getEstates().single { estateDTO -> estateDTO.id == estateId }
     }
 
 

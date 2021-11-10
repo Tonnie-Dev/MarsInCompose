@@ -19,6 +19,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.uxstate.marsincompose.R
+import com.uxstate.marsincompose.presentation.Screens
 import com.uxstate.marsincompose.presentation.estatelist.components.MarsEstateItem
 
 @ExperimentalFoundationApi
@@ -41,10 +42,16 @@ fun EstateListScreen(
 
            estate ->
 
-           MarsEstateItem(estate = estate, isLoading = state.isLoading , onItemClick = {})
+           MarsEstateItem(estate = estate, isLoading = state.isLoading , onItemClick = {
 
-       }
-        }
+              // navController.navigate("${Screens.DETAILSSCREEN.route}/{${estate.id}}")})
+
+               navController.navigate("${Screens.DETAILSSCREEN.route}/${estate.id}")
+
+
+
+       })
+        }}
 
 
         if (state.isLoading){

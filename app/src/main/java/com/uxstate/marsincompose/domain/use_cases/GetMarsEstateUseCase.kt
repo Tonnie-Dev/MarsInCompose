@@ -19,7 +19,7 @@ class GetMarsEstateUseCase @Inject constructor(private  val repo:EstateRepositor
         try {
             emit(Resource.Loading())
 
-            val estate = repo.getEstateById(id).toEstate()
+            val estate = repo.getEstateById(estateId = id).toEstate()
 
             emit(Resource.Success(estate))
         }

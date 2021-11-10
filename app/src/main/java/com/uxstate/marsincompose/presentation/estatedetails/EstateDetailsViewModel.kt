@@ -10,6 +10,7 @@ import com.uxstate.marsincompose.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
+import timber.log.Timber
 import javax.inject.Inject
 
 @HiltViewModel
@@ -26,18 +27,18 @@ class EstateDetailsViewModel @Inject constructor(
 
 
     init {
-        savedStateHandle.get<String>(Constants.ESTATE_ID)?.let { id ->
+        savedStateHandle.get<String>(Constants.ESTATE_ID)?.let { estateId ->
 
-
-            getEstate(id)
+Timber.i("Checked the viewModelId which is: $estateId")
+            getEstate(estateId)
         }
 
     }
 
 
-    private fun getEstate(id: String) {
+    private fun getEstate(estateId: String) {
 
-        useCase(id).onEach {
+        useCase(estateId).onEach {
 
             result ->
 

@@ -6,5 +6,5 @@ interface EstateRepository {
 
 
     suspend fun getEstates():List<EstateDTO>
-    suspend fun getEstateById(id:String):EstateDTO
+    suspend fun getEstateById(estateId:String):EstateDTO
 }
