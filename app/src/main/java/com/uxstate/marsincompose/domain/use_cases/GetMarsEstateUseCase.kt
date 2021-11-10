@@ -17,6 +17,8 @@ class GetMarsEstateUseCase @Inject constructor(private  val repo:EstateRepositor
     operator fun invoke(id:String): Flow<Resource<Estate>> = flow {
 
         try {
+
+
             emit(Resource.Loading())
 
             val estate = repo.getEstateById(estateId = id).toEstate()

@@ -2,14 +2,12 @@ package com.uxstate.marsincompose.presentation.estatelist
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.CircularProgressIndicator
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
@@ -21,6 +19,7 @@ import androidx.navigation.NavController
 import com.uxstate.marsincompose.R
 import com.uxstate.marsincompose.presentation.Screens
 import com.uxstate.marsincompose.presentation.estatelist.components.MarsEstateItem
+import timber.log.Timber
 
 @ExperimentalFoundationApi
 @Composable
@@ -44,7 +43,7 @@ fun EstateListScreen(
 
            MarsEstateItem(estate = estate, isLoading = state.isLoading , onItemClick = {
 
-              // navController.navigate("${Screens.DETAILSSCREEN.route}/{${estate.id}}")})
+
 
                navController.navigate("${Screens.DETAILSSCREEN.route}/${estate.id}")
 
@@ -57,6 +56,7 @@ fun EstateListScreen(
         if (state.isLoading){
 
             CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
+            
         }
 
         if (state.error.isNotBlank()){

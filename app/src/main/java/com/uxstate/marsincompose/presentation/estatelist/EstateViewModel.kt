@@ -49,13 +49,11 @@ Timber.i("getEstates Called")
 
                  state.value = EstateListState(estates = result.data?: emptyList())
 
-                 Timber.i("StateIsSuccess")
-                 Timber.i("The loaded Estates are ${state.value}")
              }
              is Resource.Loading -> {
 
                  state.value = EstateListState(isLoading = true)
-                 Timber.i("StateIsLoading")
+
                  Timber.i("The loaded Estates are ${state.value}")
              }
              is Resource.Error -> {

@@ -29,7 +29,7 @@ class EstateDetailsViewModel @Inject constructor(
     init {
         savedStateHandle.get<String>(Constants.ESTATE_ID)?.let { estateId ->
 
-Timber.i("Checked the viewModelId which is: $estateId")
+
             getEstate(estateId)
         }
 
@@ -48,7 +48,7 @@ Timber.i("Checked the viewModelId which is: $estateId")
                 is Resource.Loading -> {
 
                     state.value = EstateDetailsState(isLoading = true)
-
+                    Timber.i("StateIsLoading")
 
                 }
                 is Resource.Error -> {
@@ -59,6 +59,9 @@ Timber.i("Checked the viewModelId which is: $estateId")
 
 
                     state.value = EstateDetailsState(estate = result.data)
+
+                    Timber.i("StateIsSuccess")
+                    Timber.i("The loaded Estates are ${state.value}")
                 }
 
             }
