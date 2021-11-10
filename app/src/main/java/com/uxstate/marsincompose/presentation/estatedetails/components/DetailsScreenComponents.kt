@@ -37,7 +37,7 @@ fun DetailImage(estate: Estate) {
         contentScale = ContentScale.Crop,
         modifier = Modifier
             .fillMaxWidth().height(300.dp)
-            .padding(5.dp)
+            .padding(16.dp)
 
     )
 
