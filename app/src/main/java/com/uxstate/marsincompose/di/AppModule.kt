@@ -34,6 +34,7 @@ add the KotlinJsonAdapterFactory*/
 
     private val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
 
+    
     //1. API Dependency to be injected
     @Provides
     @Singleton

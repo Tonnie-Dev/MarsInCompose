@@ -5,8 +5,9 @@ import com.uxstate.marsincompose.data.remote.dto.EstateDTO
 import com.uxstate.marsincompose.domain.repo.EstateRepository
 import timber.log.Timber
 import javax.inject.Inject
+import javax.inject.Singleton
 
-
+@Singleton
 //This is the real implementation
 
 //It injects the Mars API dependency into the repo's constructor

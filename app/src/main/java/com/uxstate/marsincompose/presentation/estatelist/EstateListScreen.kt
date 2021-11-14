@@ -56,7 +56,7 @@ fun EstateListScreen(
         if (state.isLoading){
 
             CircularProgressIndicator(modifier = Modifier.align(Alignment.Center))
-            
+
         }
 
         if (state.error.isNotBlank()){
