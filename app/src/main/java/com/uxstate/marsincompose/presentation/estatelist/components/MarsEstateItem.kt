@@ -3,6 +3,7 @@ package com.uxstate.marsincompose.presentation.estatelist.components
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -14,9 +15,11 @@ import androidx.core.net.toUri
 import coil.compose.rememberImagePainter
 import com.uxstate.marsincompose.domain.model.Estate
 import com.uxstate.marsincompose.R
+import timber.log.Timber
+
 @Composable
 fun MarsEstateItem(
-    estate: Estate, isLoading:Boolean, onItemClick: (Estate) -> Unit
+    estate: Estate,  onItemClick: (Estate) -> Unit
 ) {
 
 
@@ -39,10 +42,12 @@ fun MarsEstateItem(
             contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = Modifier
-                .size(200.dp, 200.dp).padding(3.dp)
+                .size(200.dp, 200.dp)
+                .padding(3.dp)
 
         )
 
+        Timber.i("Image is being recomposed")
         if (estate.type=="rent"){
             
             Image(
@@ -75,6 +80,12 @@ val url =  "http://mars.jpl.nasa.gov/msl-raw-images/msss/01000/mcam/1000MR004463
         type = "rent"
     )
     MarsEstateItem(
-        estate = estate, false, onItemClick = {}
+        estate = estate,  onItemClick = {}
     )
+
+
+
 }
+
+
+

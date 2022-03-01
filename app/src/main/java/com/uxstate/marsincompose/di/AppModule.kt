@@ -21,6 +21,12 @@ import javax.inject.Singleton
 /*annotate with SingletonComponent to imply this needs to live
 * as long as our application lives - this implies that all the
 * dependencies in this module live as long as the application*/
+
+
+/*@InstallIn tells Hilt the containers where the bindings are
+available by specifying a Hilt component.
+
+You can think of a Hilt component as a container. */
 @Module
 @InstallIn(SingletonComponent::class)
 
@@ -34,17 +40,19 @@ add the KotlinJsonAdapterFactory*/
 
     private val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
 
-    
-    //1. API Dependency to be injected
+/*We can annotate a function with @Provides in Hilt modules to tell
+ Hilt how to provide types that cannot be constructor injected.*/
+
+
+    //1. API - dependency to be injected
     @Provides
     @Singleton
-
     fun providesAPIDependency(): MarsEstateAPI {
-
-        return Retrofit.Builder().baseUrl(Constants.BASE_URL)
-            .addConverterFactory(
-                MoshiConverterFactory.create(moshi)
-            ).build()
+        //Retrofit is not on our project - so we need builder to create its instance
+        return Retrofit.Builder()
+            .baseUrl(Constants.BASE_URL)
+            .addConverterFactory(MoshiConverterFactory.create(moshi))
+            .build()
             .create(MarsEstateAPI::class.java)
     }
 

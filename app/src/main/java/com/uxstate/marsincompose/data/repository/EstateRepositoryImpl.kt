@@ -25,7 +25,7 @@ class EstateRepositoryImpl @Inject constructor(private val api:MarsEstateAPI):Es
     override suspend fun getEstateById(estateId: String): EstateDTO {
 
 Timber.i("The passedId is $estateId")
-        return api.getEstates().single { estateDTO -> estateDTO.id == estateId }
+        return api.getEstates().first { estateDTO -> estateDTO.id == estateId }
     }
 
 

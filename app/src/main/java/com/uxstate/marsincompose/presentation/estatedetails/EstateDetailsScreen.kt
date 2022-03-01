@@ -63,3 +63,5 @@ fun EstateDetailsScreen(viewModel: EstateDetailsViewModel = hiltViewModel()) {
 
 
 }
+
+

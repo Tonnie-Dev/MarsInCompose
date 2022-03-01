@@ -1,4 +1,4 @@
-package com.uxstate.marsincompose.ui.theme
+package com.uxstate.marsincompose.presentation.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
