@@ -3,6 +3,7 @@ package com.uxstate.marsincompose.presentation.estatelist.components
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.Text
 import androidx.compose.material.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -42,8 +43,8 @@ fun MarsEstateItem(
             contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = Modifier
-                .size(200.dp, 200.dp)
-                .padding(3.dp)
+                    .size(200.dp, 200.dp)
+                    .padding(3.dp)
 
         )
 
@@ -54,10 +55,10 @@ fun MarsEstateItem(
                 painter = painterResource(id = R.drawable.ic_for_sale_outline),
                 contentDescription = null,
                 modifier = Modifier
-                    .padding(4.dp)
-                    .size(30.dp)
+                        .padding(4.dp)
+                        .size(30.dp)
 
-                    .align(Alignment.BottomStart)
+                        .align(Alignment.BottomStart)
             )
         }
 
@@ -88,4 +89,13 @@ val url =  "http://mars.jpl.nasa.gov/msl-raw-images/msss/01000/mcam/1000MR004463
 }
 
 
+@Composable
+fun MyTest(){
 
+    Text(text = "MY NAME")
+}
+@Preview(name = "test")
+@Composable
+fun PreviewMyName() {
+    MyTest()
+}
